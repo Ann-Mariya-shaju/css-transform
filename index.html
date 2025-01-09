@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #795757;
+        }
+
+        header {
+            background-color: #3B3030;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            width: 100%;
+        }
+
+        header a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+            background-color: #84ff00;
+        }
+
+       
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+          
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .gallery-item p {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        
+        .zoom:hover img {
+            transform: scale(1.2);
+        }
+
+        .rotate:hover img {
+            transform: rotate(15deg);
+        }
+
+        .skew:hover img {
+            transform: skewX(-10deg);
+        }
+
+        .translate:hover img {
+            transform: translateX(20px);
+        }
+
+        .scale-rotate:hover img {
+            transform: scale(1.1) rotate(-10deg);
+        }
+
+        .rotate-scale:hover img {
+            transform: rotate(25deg) scale(1.2);
+        }
+
+        /* Hover Effects for 3D Transforms */
+        .flip:hover img {
+            transform: rotateY(180deg);
+        }
+
+        .tilt:hover img {
+            transform: perspective(500px) rotateX(15deg);
+        }
+
+        .grayscale:hover img {
+            filter: grayscale(100%);
+        }
+
+        .rotate3d:hover img {
+            transform: rotate3d(1, 1, 0, 45deg);
+        }
+
+        .depth:hover img {
+            transform: perspective(400px) translateZ(50px);
+        }
+
+        .spin3d:hover img {
+            transform: perspective(600px) rotateY(360deg);
+        }
+        footer {
+            background-color: #3B3030;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#2d-transforms">2D Transforms</a>
+        <a href="#3d-transforms">3D Transforms</a>
+    </header>
+
+    <h2 id="2d-transforms">2D Transforms</h2>
+    <div class="gallery">
+        <div class="gallery-item zoom">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.eGB-8ic41mQhwKGuBt6CjQHaEo&pid=Api&P=0&h=180" alt="Zoom Effect">
+            <p>Zoom Effect()</p>
+        </div>
+        <div class="gallery-item rotate">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.gASMlPqsrIt_9q8Y76PZKgHaFj&pid=Api&P=0&h=180" alt="Rotate Effect">
+            <p>Rotate Effect()</p>
+        </div>
+        <div class="gallery-item skew">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.v-TZih1hRCuh_UmnLwlHmgHaEK&pid=Api&P=0&h=180" alt="Skew Effect">
+            <p>Skew Effect()</p>
+        </div>
+        <div class="gallery-item translate">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.U0SfqHcCr4A3TEW4cIDGOQHaEI&pid=Api&P=0&h=180" alt="Translate Effect">
+            <p>Translate Effect()</p>
+        </div>
+        <div class="gallery-item scale-rotate">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.APFRfbS9RcYc12sR9BWxCAHaE5&pid=Api&P=0&h=180" alt="Scale and Rotate Effect">
+            <p>Scale and Rotate Effect()</p>
+        </div>
+        <div class="gallery-item rotate-scale">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.KBakfbaN7EYkOF2wMA09XgHaEK&pid=Api&P=0&h=180" alt="Rotate and Scale Effect">
+            <p>Rotate and Scale Effect()</p>
+        </div>
+    </div>
+
+    <h2 id="3d-transforms">3D Transforms</h2>
+    <div class="gallery">
+        <div class="gallery-item flip">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.Pq8MPxEGieC4WCJZzGYV2wHaEo&pid=Api&P=0&h=180" alt="Flip Effect">
+            <p>Flip Effect()</p>
+        </div>
+        <div class="gallery-item tilt">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.2iuO8Nhu4ClO0vdw-hBDogHaEK&pid=Api&P=0&h=180" alt="Tilt Effect">
+            <p>Tilt Effect()</p>
+        </div>
+        <div class="gallery-item grayscale">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.2iuO8Nhu4ClO0vdw-hBDogHaEK&pid=Api&P=0&h=180" alt="Grayscale Effect">
+            <p>Grayscale Effect()</p>
+        </div>
+        <div class="gallery-item rotate3d">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.anp0XQz24UeOEE5qf-5swQHaEo&pid=Api&P=0&h=180" alt="3D Rotate Effect">
+            <p>3D Rotate Effect()</p>
+        </div>
+        <div class="gallery-item depth">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.ybKRj9NJKi49Fx2wiDaLnwHaEo&pid=Api&P=0&h=180" alt="Depth Effect">
+            <p>Depth Effect()</p>
+        </div>
+        <div class="gallery-item spin3d">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.LR_IYs931tLpLsi20DQo_AHaEK&pid=Api&P=0&h=180" alt="3D Spin Effect">
+            <p>3D Spin Effect()</p>
+        </div>
+    </div>
+    <footer>
+        <div class="credite">
+            Designed By Ann Mariya
+           
+        </div>
+        <div class="copyright">
+            &copy; Copyright <strong><span>2025</span></strong>. All Rights Reserved
+        </div>
+    </footer>
+</body>
+</html>
